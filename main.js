@@ -1,3 +1,16 @@
+class Historicos {
+    constructor(distancia, valorDoCombustivel, consumoPorkm, valorDoFrete, gasto, lucro) {
+        this.distancia = distancia
+        this.valorDoCombustivel = valorDoCombustivel
+        this.consumoPorkm = consumoPorkm
+        this.valorDoFrete = valorDoFrete
+        this.gasto = gasto
+        this.lucro = lucro
+    }
+}
+
+const arrayTeste = []
+
 function calcular(){
     const distancia = parseFloat((document.getElementById('distancia').value).replace(',', '.'))
     const valorDoCombustivel = parseFloat((document.getElementById('valor-do-combustivel').value).replace(',', '.'))
@@ -9,6 +22,7 @@ function calcular(){
 
     if(distancia >= 0 && valorDoCombustivel >= 0 && consumoPorkm >= 0){
         exibir(gasto, lucro)
+        historico(distancia, valorDoCombustivel, consumoPorkm, valorDoFrete, gasto, lucro)
     } else{
         const caixa1 = document.querySelector(".java1")
         caixa1.classList.remove('display__none')
@@ -66,3 +80,17 @@ function apagar(){
     document.getElementById('consumo-por-km').value = ''
     document.getElementById('valor-do-frete').value = ''
 }
+
+function historico(distancia, valorDoCombustivel, consumoPorkm, valorDoFrete, gasto, lucro){
+
+    let novoItem = new Historicos(distancia, valorDoCombustivel, consumoPorkm, valorDoFrete, gasto, lucro)
+    arrayTeste.push(novoItem)
+    console.log(arrayTeste)
+}
+
+function exibirHistorico(){
+
+}
+    
+
+
