@@ -4,12 +4,18 @@ function calcular(){
     const consumoPorkm = parseFloat((document.getElementById('consumo-por-km').value).replace(',', '.'))
     const valorDoFrete = parseFloat((document.getElementById('valor-do-frete').value).replace(',', '.'))
     const gasto = ((valorDoCombustivel / consumoPorkm) * distancia).toFixed(2)
-    console.log(valorDoCombustivel)
-
+    
     const lucro = (valorDoFrete - gasto).toFixed(2)
-    console.log(valorDoCombustivel)
 
-    exibir(gasto, lucro)
+    if(distancia >= 0 && valorDoCombustivel >= 0 && consumoPorkm >= 0){
+        exibir(gasto, lucro)
+    } else{
+        const caixa1 = document.querySelector(".java1")
+        caixa1.classList.remove('display__none')
+        caixa1.classList.add('corpo__principal__resultado')
+        let exibirGasto = document.getElementById('caixa-gasto')
+        exibirGasto.innerHTML = `<h2 class="corpo__principal__resultado__titulo">Dados insuficientes</h2>`
+    }
 }
 
 function exibir(gasto, lucro){
@@ -18,10 +24,21 @@ function exibir(gasto, lucro){
     caixa1.classList.remove('display__none')
     caixa1.classList.add('corpo__principal__resultado')
 
+    if(lucro > 0 || lucro < 0){
     const caixa2 = document.querySelector(".java2")
     caixa2.classList.remove('display__none')
     caixa2.classList.add('corpo__principal__resultado')
 
+    let exibirLucro = document.getElementById('caixa-lucro')
+    exibirLucro.innerHTML = `<h2 class="corpo__principal__resultado__titulo">O lucro do frete será:</h2>` + `<p class="corpo__principal__resultado__valor">$${lucro}</p>`
+    } else{
+    const caixa2 = document.querySelector(".java2")
+    caixa2.classList.remove('display__none')
+    caixa2.classList.add('corpo__principal__resultado')
+
+    let exibirLucro = document.getElementById('caixa-lucro')
+    exibirLucro.innerHTML = `<h2 class="corpo__principal__resultado__titulo">O lucro do frete será:</h2>` + `<p class="corpo__principal__resultado__valor">------</p>`
+    }
     const botao = document.querySelector(".java3")
     botao.classList.remove('display__none')
     botao.classList.add('corpo__principal__botao__apagar')
@@ -29,8 +46,6 @@ function exibir(gasto, lucro){
     let exibirGasto = document.getElementById('caixa-gasto')
     exibirGasto.innerHTML = `<h2 class="corpo__principal__resultado__titulo">O preço do combustivel é:</h2>` + `<p class="corpo__principal__resultado__valor">$${gasto}</p>`
 
-    let exibirLucro = document.getElementById('caixa-lucro')
-    exibirLucro.innerHTML = `<h2 class="corpo__principal__resultado__titulo">O lucro do frete será:</h2>` + `<p class="corpo__principal__resultado__valor">$${lucro}</p>`
 }
 
 function apagar(){
