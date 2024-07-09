@@ -3,10 +3,10 @@ function calcular(){
     const valorDoCombustivel = parseFloat((document.getElementById('valor-do-combustivel').value).replace(',', '.'))
     const consumoPorkm = parseFloat((document.getElementById('consumo-por-km').value).replace(',', '.'))
     const valorDoFrete = parseFloat((document.getElementById('valor-do-frete').value).replace(',', '.'))
-    const gasto = (valorDoCombustivel / consumoPorkm) * distancia
+    const gasto = ((valorDoCombustivel / consumoPorkm) * distancia).toFixed(2)
     console.log(valorDoCombustivel)
 
-    const lucro = valorDoFrete - gasto
+    const lucro = (valorDoFrete - gasto).toFixed(2)
     console.log(valorDoCombustivel)
 
     exibir(gasto, lucro)
@@ -27,10 +27,10 @@ function exibir(gasto, lucro){
     botao.classList.add('corpo__principal__botao__apagar')
      
     let exibirGasto = document.getElementById('caixa-gasto')
-    exibirGasto.innerHTML = `<p class="corpo__principal__resultado__valor">$${gasto}</p>`
+    exibirGasto.innerHTML = `<h2 class="corpo__principal__resultado__titulo">O preço do combustivel é:</h2>` + `<p class="corpo__principal__resultado__valor">$${gasto}</p>`
 
     let exibirLucro = document.getElementById('caixa-lucro')
-    exibirLucro.innerHTML = `<p class="corpo__principal__resultado__valor">$${lucro}</p>`
+    exibirLucro.innerHTML = `<h2 class="corpo__principal__resultado__titulo">O lucro do frete será:</h2>` + `<p class="corpo__principal__resultado__valor">$${lucro}</p>`
 }
 
 function apagar(){
