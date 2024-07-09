@@ -1,0 +1,10 @@
+:root {
+    --cor-de-fundo: #FFEDFE;
+    --cor-do--titulo: #0079E0;
+    --cor-das--fontes: #000000;
+
+}
+
+.box{
+    background-color: var(--cor-de-fundo);
+}
