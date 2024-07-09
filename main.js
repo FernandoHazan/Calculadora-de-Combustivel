@@ -1,13 +1,13 @@
 function calcular(){
-    const distancia = parseInt(document.getElementById('distancia').value)
-    const valorDoCombustivel = parseInt(document.getElementById('valor-do-combustivel').value)
-    const consumoPorkm = parseInt(document.getElementById('consumo-por-km').value)
-    const valorDoFrete = parseInt(document.getElementById('valor-do-frete').value)
-
+    const distancia = parseFloat((document.getElementById('distancia').value).replace(',', '.'))
+    const valorDoCombustivel = parseFloat((document.getElementById('valor-do-combustivel').value).replace(',', '.'))
+    const consumoPorkm = parseFloat((document.getElementById('consumo-por-km').value).replace(',', '.'))
+    const valorDoFrete = parseFloat((document.getElementById('valor-do-frete').value).replace(',', '.'))
     const gasto = (valorDoCombustivel / consumoPorkm) * distancia
-    console.log(gasto)
+    console.log(valorDoCombustivel)
 
     const lucro = valorDoFrete - gasto
+    console.log(valorDoCombustivel)
 
     exibir(gasto, lucro)
 }
