@@ -11,31 +11,31 @@
     <h1 class="corpo__titulo">Calculadora</h1>
     <main class="corpo__principal">
         <div class="corpo__principal__caixa">
-            <P class="corpo__principal__caixa__titulo" id="distancia">Distancia:</P>
-            <input type"number" class="corpo__principal__caixa__valor">
+            <P class="corpo__principal__caixa__titulo">Distancia:</P>
+            <input type"number" class="corpo__principal__caixa__valor" id="distancia">
         </div>
         <div class="corpo__principal__caixa">
-            <P class="corpo__principal__caixa__titulo" id="valor-do-combustivel">Valor do Combustivel:</P>
-            <input type"number" class="corpo__principal__caixa__valor">
+            <P class="corpo__principal__caixa__titulo">Valor do Combustivel:</P>
+            <input type"number" class="corpo__principal__caixa__valor" id="valor-do-combustivel">
         </div>
         <div class="corpo__principal__caixa">
-            <P class="corpo__principal__caixa__titulo" id="consumo-por-km">Consumo por KM:</P>
-            <input type"number" class="corpo__principal__caixa__valor">
+            <P class="corpo__principal__caixa__titulo">Consumo por KM:</P>
+            <input type"number" class="corpo__principal__caixa__valor" id="consumo-por-km">
         </div>
         <div class="corpo__principal__caixa">
-            <P class="corpo__principal__caixa__titulo" id="valor-do-frete">Valor do frete:</P>
-            <input type"number" class="corpo__principal__caixa__valor">
+            <P class="corpo__principal__caixa__titulo">Valor do frete:</P>
+            <input type"number" class="corpo__principal__caixa__valor" id="valor-do-frete">
         </div>
-        <button class="corpo__principal__botao">Calcular</button>
-        <div class="corpo__principal__resultado">
+        <button class="corpo__principal__botao" onclick="calcular()">Calcular</button>
+        <section class="display__none java1" id="caixa-gasto">
             <p class="corpo__principal__resultado__titulo">O preço do combustivel é:</p>
-            <p class="corpo__principal__resultado__valor" id="gasto">$600</p>
-        </div>
-        <div class="corpo__principal__resultado">
+            <p class="corpo__principal__resultado__valor" id="gasto"></p>
+        </section>
+        <section class="display__none java2" id="caixa-lucro">
             <p class="corpo__principal__resultado__titulo">O lucro do frete será:</p>
-            <p class="corpo__principal__resultado__valor" id="lucro">$800</p>
-        </div>
-        <button class="corpo__principal__botao__apagar">Apagar</button>
+            <p class="corpo__principal__resultado__valor" id="lucro"></p>
+        </section>
+        <button class="display__none java3" id="botao" onclick="apagar()">Apagar</button>
         <p class="corpo__principal__historico">Histórico</p>
     </main>   
     <script src="main.js" defer></script>
