@@ -81,6 +81,45 @@
     display: block;
 }
 
+.corpo__principal__historico-titulo{
+    color: var(--cor-do--titulo);
+    font-weight: 600;
+    font-size: 1.5em;
+}
+
+.corpo__principal__caixa-historico{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+}
+
+.corpo__principal__caixa-historico__bloco1{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+    background-color: white;
+    font-size: 0.8em;
+    font-weight: 500;
+    padding: 2em;
+    border-radius: 10px;
+}
+
+.corpo__principal__caixa-historico__bloco2{
+    display: flex;
+    justify-content: space-between;
+    color: var(--cor-do--titulo);
+    font-weight: 600;
+    margin-top: 0.8em;
+    gap: 1em;
+}
+
+
+
+
+
+
+
+
 .corpo__principal__historico{
     font-weight: 600;
     margin-top: 1em;
