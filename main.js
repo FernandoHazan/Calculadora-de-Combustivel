@@ -90,7 +90,6 @@ function historico(distancia, valorDoCombustivel, consumoPorkm, valorDoFrete, ga
 
 function exibirHistorico(){
     
-    
     let dados = document.getElementById('caixa1')
     
     for(let i=0; i < arrayTeste.length; i++){
@@ -111,7 +110,6 @@ function exibirHistorico(){
 
         caixa2.classList.remove('display__none')
         caixa2.classList.add('corpo__principal__caixa-historico')
-
 
     } else{
     
