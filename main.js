@@ -92,6 +92,11 @@ function exibirHistorico(){
     
     let dados = document.getElementById('caixa1')
     
+    
+    if(arrayTeste.length === 0){
+    dados.innerHTML = `<h2 class="corpo__principal__resultado__titulo">Nenhum cálculo feito</h2>`
+    }else{
+    
     for(let i=0; i < arrayTeste.length; i++){
 
       if(arrayTeste[i].valorDoFrete >= 0 || arrayTeste[i].valorDoFrete <= 0){
@@ -100,6 +105,7 @@ function exibirHistorico(){
         dados.innerHTML = dados.innerHTML + `<div class="corpo__principal__caixa-historico__bloco1"><p>Distancia: $${arrayTeste[i].distancia}</p><p>Preço por litro: $${arrayTeste[i].consumoPorkm}</p><p>Preço do combustivel: $${arrayTeste[i].valorDoCombustivel}</p><p>Preço do frete: xx</p><div class="corpo__principal__caixa-historico__bloco2"><p class="corpo__principal__caixa-historico__bloco2__valores">Lucro: xx</p><p class="corpo__principal__caixa-historico__bloco2__valores">Gasto: $${arrayTeste[i].gasto}</p></div></div>`
     }
 }
+    }
     
     const caixa1 = document.querySelector(".troca1")
     const caixa2 = document.querySelector(".troca2")
