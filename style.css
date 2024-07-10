@@ -12,9 +12,9 @@
 .corpo{
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
     gap: 1em;
-    margin-top: 15%;
     font-family: var(--fonte-principal)
 }
 
